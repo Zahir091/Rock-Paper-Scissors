@@ -33,7 +33,7 @@ function playGame() {
     let play = 1;
     while (play > 0) {
         playPrompt = prompt("Do you want to continue (Y/N)");
-        if (playPrompt = "Y") {
+        if (playPrompt == "Y") {
             play = 1;
         }
         else {
@@ -46,44 +46,42 @@ function playGame() {
 
         switch(playMove) {
             case "Rock":
-                if(compMove = "Rock") {
+                if(compMove == "Rock") {
                     console.log("Tie");
                 }
-                else if (compMove = "Scissors") {
+                else if (compMove == "Scissors") {
                     console.log("You won!");
                 }
-                else if(compMove = "Paper") {
-                    console.log("You lost");
-                }
-                break;
-                    case "Rock":
-                if(compMove = "Rock") {
-                    console.log("Tie");
-                }
-                else if (compMove = "Scissors") {
-                    console.log("You won!");
-                }
-                else if(compMove = "Paper") {
+                else if(compMove == "Paper") {
                     console.log("You lost");
                 }
                 break;
             case "Paper":
-                 if(compMove = "Paper") {
+                if(compMove == "Paper") {
+                    console.log("Tie");
+                }
+                else if (compMove == "Rock") {
+                    console.log("You won!");
+                }
+                else if(compMove == "Scissors") {
+                    console.log("You lost");
+                }
+                break;
+            case "Scissors":
+                 if(compMove == "Scissors") {
                         console.log("Tie");
                     }
-                 else if (compMove = "Scissors") {
+                 else if (compMove == "Paper") {
                         console.log("You won!");
                     }
-                 else if(compMove = "Paper") {
+                 else if(compMove == "Rock") {
                         console.log("You lost");
                     }
                  break;
-
-        }
-
-
-
-
-
+            default: 
+                    console.log("error");
+                }
     }
 }
+
+playGame();
