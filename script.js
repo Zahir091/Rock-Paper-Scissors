@@ -1,3 +1,5 @@
+let rounds = 0, playerPts = 0, compPts = 0;
+
 function getPlayerMove() {
     let move;
     move =  prompt("What's your move?");
@@ -43,17 +45,20 @@ function playGame() {
         }
         let playMove = getPlayerMove();
         let compMove = getComputerMove();
-
+        rounds++;
         switch(playMove) {
             case "Rock":
                 if(compMove == "Rock") {
                     console.log("Tie");
+                    
                 }
                 else if (compMove == "Scissors") {
                     console.log("You won!");
+                    playerPts++;
                 }
                 else if(compMove == "Paper") {
                     console.log("You lost");
+                    compPts++;
                 }
                 break;
             case "Paper":
@@ -62,20 +67,25 @@ function playGame() {
                 }
                 else if (compMove == "Rock") {
                     console.log("You won!");
+                    playerPts++;
                 }
                 else if(compMove == "Scissors") {
                     console.log("You lost");
+                    compPts++;
                 }
                 break;
             case "Scissors":
                  if(compMove == "Scissors") {
                         console.log("Tie");
+                    
                     }
                  else if (compMove == "Paper") {
                         console.log("You won!");
+                        playerPts++;
                     }
                  else if(compMove == "Rock") {
                         console.log("You lost");
+                        compPts++;
                     }
                  break;
             default: 
