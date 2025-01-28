@@ -49,41 +49,49 @@ function playGame() {
         switch(playMove) {
             case "Rock":
                 if(compMove == "Rock") {
-                    console.log("Tie");
-                    
+                    console.log(`Round: ${rounds}, Player: ${playMove}, Comp: ${compMove}`);
+                    console.log("Tie!")
                 }
                 else if (compMove == "Scissors") {
+                    console.log(`Round: ${rounds}, Player: ${playMove}, Comp: ${compMove}`);
                     console.log("You won!");
                     playerPts++;
                 }
                 else if(compMove == "Paper") {
+                    console.log(`Round: ${rounds}, Player: ${playMove}, Comp: ${compMove}`);
                     console.log("You lost");
                     compPts++;
                 }
                 break;
             case "Paper":
                 if(compMove == "Paper") {
+                    console.log(`Round: ${rounds}, Player: ${playMove}, Comp: ${compMove}`);
                     console.log("Tie");
                 }
                 else if (compMove == "Rock") {
+                    console.log(`Round: ${rounds}, Player: ${playMove}, Comp: ${compMove}`);
                     console.log("You won!");
                     playerPts++;
                 }
                 else if(compMove == "Scissors") {
+                    console.log(`Round: ${rounds}, Player: ${playMove}, Comp: ${compMove}`);
                     console.log("You lost");
                     compPts++;
                 }
                 break;
             case "Scissors":
                  if(compMove == "Scissors") {
+                    console.log(`Round: ${rounds}, Player: ${playMove}, Comp: ${compMove}`);
                         console.log("Tie");
                     
                     }
                  else if (compMove == "Paper") {
+                    console.log(`Round: ${rounds}, Player: ${playMove}, Comp: ${compMove}`);
                         console.log("You won!");
                         playerPts++;
                     }
                  else if(compMove == "Rock") {
+                    console.log(`Round: ${rounds}, Player: ${playMove}, Comp: ${compMove}`);
                         console.log("You lost");
                         compPts++;
                     }
