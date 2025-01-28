@@ -41,6 +41,7 @@ function playGame() {
         else {
             play = 0;
             console.log("GAME HAS ENDED")
+            console.log(`Final score : ${playerPts} - ${compPts}`)
             return;
         }
         let playMove = getPlayerMove();
@@ -100,6 +101,7 @@ function playGame() {
                     console.log("error");
                 }
     }
+
 }
 
 playGame();
