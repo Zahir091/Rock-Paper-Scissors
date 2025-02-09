@@ -24,12 +24,14 @@ img {
     display: flex;
     justify-content: space-around;
     align-items: center;
+
     height: 50%;
     padding: 30px;
 }
 
 .option {
     border: solid purple 3px;
+    border-radius: 100%;
     padding:30px;
     width: 200px;
     height: 200px;
