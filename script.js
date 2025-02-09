@@ -16,12 +16,15 @@ function getMove(event) {
 }
 
 let optionsMenu = document.querySelector(".options-menu");
-optionsMenu.addEventListener('click', getMove(e));
+optionsMenu.addEventListener('click', function(event) {
+    let playerMove = event.target.id;
+    if(playerMove == "rock" || playerMove == "paper" || playerMove == "scissors") {
+        console.log(`Player has chosen ${playerMove}`);
+        playGame(playerMove);
+    }
+});
 
 
-function givePlayerMove(theMove) {
-    return theMove;
-};
 
 //RANDOM NUMBER GEN
 function getRandomInt(max) {
@@ -48,8 +51,7 @@ function getComputerMove() {
 }
 
 
-function playGame() {
-        let playMove = givePlayerMove();
+function playGame(playMove) {
         let compMove = getComputerMove();
         rounds++;
         switch(playMove) {
@@ -106,9 +108,4 @@ function playGame() {
                     console.log("error");
                 }
             }
-        
-
-function startNewRound() {
-    playGame();
-}
 
