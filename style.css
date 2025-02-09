@@ -8,6 +8,7 @@ html, body {
     align-items: center;
     justify-content: center;
     border: solid pink 3px;
+    background-color:rgb(13, 35, 54);
 }
 
 img {
@@ -31,7 +32,7 @@ img {
 
 .option {
     border: solid purple 3px;
-    border-radius: 100%;
+    
     padding:30px;
     width: 200px;
     height: 200px;
@@ -43,4 +44,14 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: center;
+}
+
+.btnStyle  {
+    width:150px;
+    align-self: center;
+}
+
+#header {
+    color:white;
 }

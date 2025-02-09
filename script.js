@@ -29,7 +29,7 @@ optionsMenu.addEventListener('click', function(event) {
 //RANDOM NUMBER GEN
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
-  } 
+} 
 
 function getComputerMove() {
     let cMove;
