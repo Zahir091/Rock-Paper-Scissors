@@ -1,21 +1,22 @@
 let rounds = 0, playerPts = 0, compPts = 0;
-let move;
+
+let main = document.querySelector(".main");
+let startingText = document.querySelector("#startingText");
+let startBtn = document.querySelector("#startBtn");
+
+let optionsMenu = document.querySelector(".options-menu");
 
 let optionRock = document.querySelector(".Option-rock");
 let optionScissors = document.querySelector(".Option-scissors");
 let optionPaper = document.querySelector(".Option-paper");
 
-function getMove(event) {
-    move = event.target;
-    switch (move.id) {
-        case('Option-rock'):
-            console.log("Player has chosen Rock");
-            givePlayerMove("Rock");
-    }
+//Adding event handler to the startBtn 
+startBtn.addEventListener('click', function(event) {
+    main.removeChild(startingText);
+    
+});
 
-}
-
-let optionsMenu = document.querySelector(".options-menu");
+//Adding event handler to the options menu
 optionsMenu.addEventListener('click', function(event) {
     let playerMove = event.target.id;
     if(playerMove == "rock" || playerMove == "paper" || playerMove == "scissors") {
@@ -23,7 +24,6 @@ optionsMenu.addEventListener('click', function(event) {
         playGame(playerMove);
     }
 });
-
 
 
 //RANDOM NUMBER GEN
