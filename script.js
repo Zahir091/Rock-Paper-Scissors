@@ -1,9 +1,26 @@
 let rounds = 0, playerPts = 0, compPts = 0;
+let move;
 
-function getPlayerMove() {
-    let move;
-    move =  prompt("What's your move?");
-    return move;
+let optionRock = document.querySelector(".Option-rock");
+let optionScissors = document.querySelector(".Option-scissors");
+let optionPaper = document.querySelector(".Option-paper");
+
+function getMove(event) {
+    move = event.target;
+    switch (move.id) {
+        case('Option-rock'):
+            console.log("Player has chosen Rock");
+            givePlayerMove("Rock");
+    }
+
+}
+
+let optionsMenu = document.querySelector(".options-menu");
+optionsMenu.addEventListener('click', getMove(e));
+
+
+function givePlayerMove(theMove) {
+    return theMove;
 };
 
 //RANDOM NUMBER GEN
@@ -32,19 +49,7 @@ function getComputerMove() {
 
 
 function playGame() {
-    let play = 1;
-    while (play > 0) {
-        playPrompt = prompt("Do you want to continue (Y/N)");
-        if (playPrompt == "Y") {
-            play = 1;
-        }
-        else {
-            play = 0;
-            console.log("GAME HAS ENDED")
-            console.log(`Final score : ${playerPts} - ${compPts}`)
-            return;
-        }
-        let playMove = getPlayerMove();
+        let playMove = givePlayerMove();
         let compMove = getComputerMove();
         rounds++;
         switch(playMove) {
@@ -100,8 +105,10 @@ function playGame() {
             default: 
                     console.log("error");
                 }
-    }
+            }
+        
 
+function startNewRound() {
+    playGame();
 }
 
-playGame();
