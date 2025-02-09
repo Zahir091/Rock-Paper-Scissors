@@ -10,19 +10,29 @@ html, body {
     border: solid pink 3px;
 }
 
+img {
+    height:100%;
+    width:100%;
+}
+
 .main {
     height:100%;
+    width: 100%;
 }
 .options-menu {
     border: solid black 3px;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     height: 50%;
+    padding: 30px;
 }
 
 .option {
     border: solid purple 3px;
-
+    padding:30px;
+    width: 200px;
+    height: 200px;
 }
 
 #startingText {
