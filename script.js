@@ -36,13 +36,13 @@ function getComputerMove() {
     cMove = getRandomInt(2);
     switch (cMove) {
         case 0:
-            cMove = "Rock";
+            cMove = "rock";
             break;
         case 1:
-            cMove = "Paper";
+            cMove = "paper";
             break;
         case 2: 
-            cMove = "Scissor";
+            cMove = "scissor";
             break;
         default:
             cMove = "NONE";
@@ -55,50 +55,50 @@ function playGame(playMove) {
         let compMove = getComputerMove();
         rounds++;
         switch(playMove) {
-            case "Rock":
-                if(compMove == "Rock") {
+            case "rock":
+                if(compMove == "rock") {
                     console.log(`Round: ${rounds}, Player: ${playMove}, Comp: ${compMove}`);
                     console.log("Tie!")
                 }
-                else if (compMove == "Scissors") {
+                else if (compMove == "scissors") {
                     console.log(`Round: ${rounds}, Player: ${playMove}, Comp: ${compMove}`);
                     console.log("You won!");
                     playerPts++;
                 }
-                else if(compMove == "Paper") {
+                else if(compMove == "paper") {
                     console.log(`Round: ${rounds}, Player: ${playMove}, Comp: ${compMove}`);
                     console.log("You lost");
                     compPts++;
                 }
                 break;
-            case "Paper":
-                if(compMove == "Paper") {
+            case "paper":
+                if(compMove == "paper") {
                     console.log(`Round: ${rounds}, Player: ${playMove}, Comp: ${compMove}`);
                     console.log("Tie");
                 }
-                else if (compMove == "Rock") {
+                else if (compMove == "rock") {
                     console.log(`Round: ${rounds}, Player: ${playMove}, Comp: ${compMove}`);
                     console.log("You won!");
                     playerPts++;
                 }
-                else if(compMove == "Scissors") {
+                else if(compMove == "scissors") {
                     console.log(`Round: ${rounds}, Player: ${playMove}, Comp: ${compMove}`);
                     console.log("You lost");
                     compPts++;
                 }
                 break;
-            case "Scissors":
-                 if(compMove == "Scissors") {
+            case "scissors":
+                 if(compMove == "scissors") {
                     console.log(`Round: ${rounds}, Player: ${playMove}, Comp: ${compMove}`);
                         console.log("Tie");
                     
                     }
-                 else if (compMove == "Paper") {
+                 else if (compMove == "paper") {
                     console.log(`Round: ${rounds}, Player: ${playMove}, Comp: ${compMove}`);
                         console.log("You won!");
                         playerPts++;
                     }
-                 else if(compMove == "Rock") {
+                 else if(compMove == "rock") {
                     console.log(`Round: ${rounds}, Player: ${playMove}, Comp: ${compMove}`);
                         console.log("You lost");
                         compPts++;

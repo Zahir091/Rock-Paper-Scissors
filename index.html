@@ -4,25 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Rock-Paper-Scissors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Iso&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geo:ital@0;1&family=Orbitron:wght@400..900&family=Rubik+Iso&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="main">
 
         <div id="startingText">
-            <h1 id="header">Welcome to Rock Paper Scissors</h1>
+            <h1 id="header">Welcome to <br> Rock Paper Scissors</h1>
             <button class="btnStyle" id="startBtn">Play Game</button>
         </div>
         
+        <div class="playTxt">
+            <div class="score">
+                    <div class="person">
+                        <h4>Player:</h4>
+                        <div class="score-display">3</div>
+                    </div>
+                    <div class="person">
+                        <h4>Computer:</h4>
+                        <div class="score-display">2</div>
+                    </div>
+            </div>
+            <h3>Choose a move...</h3>
+        </div>
         <div class="options-menu">
             <div class="option" id="rock">
                 <img src="Images/rock.png">
+                <h4>Rock</h4>
             </div>
             <div class="option" id="paper">
                 <img src="Images/scissors.png">
+                <h4>Scissors</h4>
             </div>
             <div class="option" id="scissors">
                 <img src="Images/paper.png">
+                <h4>Paper</h4>
             </div>
         </div>
 
