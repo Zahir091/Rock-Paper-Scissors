@@ -26,7 +26,7 @@ img {
     justify-content: center;
     align-items: flex-start;
     height: 33%;
- 
+   
     gap:50px;
 }
 
@@ -35,7 +35,7 @@ img {
     color:white;
     padding:30px;
     width: 200px;
-    height: 200px;
+ 
 }
 
 .option img {
@@ -73,29 +73,57 @@ img {
     display:flex;
     flex-direction: column;
     border: solid turquoise 3px;
-    justify-content: flex-end;
 }
 
 .person {
-    align-items: flex-start;
-   border: solid red 3px;
+    border: solid red 3px;
     display: flex;
     flex-direction: column;
+    align-items: baseline;
+    padding:25px;
+  
+ 
 }
 
+.person h4 {
+    margin: 0;  
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+
 .score {
+    font-size: 22px;
+    color:white;
     display:flex;
     border:solid pink 3px;
     flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+
 }
 
 .score-display {
-
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
     background-color:azure;
     color:black;
     font-family: "Orbitron", serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    width:150px;
+    font-size: 35px;
+    width: 175px;
+}
+
+#moveTxt {
+    text-align: center;
+    margin: 0;
+}
+
+.options-Container {
+    border:solid yellow 3px;
+    color:white;
+    font-size: 22px;
 }
