@@ -8,7 +8,6 @@ html, body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    border: solid pink 3px;
     background-color:rgb(13, 35, 54);
     /*overflow-y: auto; /* Allow vertical scrolling */
 }
@@ -21,14 +20,15 @@ img {
 .main {
     height:100%;
     width: 100%;
+    display:flex;
+    flex-direction: column;
+    
 }
 .options-menu {
-    border: solid black 3px;
+    
     display: flex;
     justify-content: center;
     align-items: flex-start;
-
-   
     gap:50px;
 }
 
@@ -89,7 +89,6 @@ img {
     font-size: 22px;
     color:white;
     display:flex;
-    border:solid pink 3px;
     flex-direction: row;
     margin:0 auto; /*centers horizontally*/
     gap: 10px;
@@ -121,7 +120,10 @@ img {
 }
 
 .options-Container {
-    border:solid yellow 3px;
     color:white;
     font-size: 22px;
+}
+
+#playAgain {
+    align-self: center;
 }

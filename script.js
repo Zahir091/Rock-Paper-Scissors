@@ -3,13 +3,7 @@ let rounds = 0, playerPts = 0, compPts = 0;
 const main = document.querySelector(".main");
 const startingText = document.querySelector("#startingText");
 const startBtn = document.querySelector("#startBtn");
-
-const optionsMenu = document.querySelector(".options-menu");
-
-const optionRock = document.querySelector(".Option-rock");
-const optionScissors = document.querySelector(".Option-scissors");
-const optionPaper = document.querySelector(".Option-paper");
-
+const headTxt = document.querySelector("#header");
 
 const scoreDiv = document.querySelector(".score");
 const personPlayer = document.createElement("div");
@@ -27,18 +21,48 @@ const compTag = document.createElement("h4");
 playerTag.textContent = "Player";
 compTag.textContent = "Computer";
 
+const optionsContainer = document.querySelector(".options-Container");
+const optionsMenu = document.querySelector(".options-menu");
+
+const optionRock = document.querySelector("#rock");
+
+const rockIMG = document.createElement("img");
+rockIMG.setAttribute('src', 'Images/rock.png');
+const rockTXT = document.createElement("h4");
+rockTXT.textContent = "Rock";
+optionRock.append(rockIMG, rockTXT);
+optionPaper.append(paperIMG, paperTXT);
+optionScissors.append(scissorsIMG, scissorsTXT);
+
+const optionScissors = document.querySelector("#paper");
+
+const paperIMG = document.createElement("img");
+paperIMG.setAttribute('src', 'Images/paper.png');
+const paperTXT = document.createElement("h4");
+paperTXT.textContent = "Paper";
+
+const optionPaper = document.querySelector("#scissors");
+
+const scissorsIMG = document.createElement("img");
+scissorsIMG.setAttribute('src', 'Images/scissors.png');
+const scissorsTXT = document.createElement("h4");
+scissorsTXT.textContent = "Scissors";
+
+const chooseTXT = document.createElement("h3");
+chooseTXT.textContent = "Choose a move...";
+chooseTXT.setAttribute('id', 'moveTxt');
 
 
 //Adding event handler to the startBtn 
 startBtn.addEventListener('click', function(event) {
-    main.removeChild(startingText);
+    headTxt.textContent = "Rock   Paper   Scissors";
     personPlayer.appendChild(personDisplayScore);
     personPlayer.appendChild(playerTag);
     compPlayer.appendChild(compDisplayScore);
     compPlayer.appendChild(compTag);
     scoreDiv.appendChild(personPlayer);
     scoreDiv.appendChild(compPlayer);
-    
+    startingText.removeChild(startBtn);
 });
 
 //Adding event handler to the options menu
