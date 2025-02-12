@@ -1,18 +1,43 @@
 let rounds = 0, playerPts = 0, compPts = 0;
 
-let main = document.querySelector(".main");
-let startingText = document.querySelector("#startingText");
-let startBtn = document.querySelector("#startBtn");
+const main = document.querySelector(".main");
+const startingText = document.querySelector("#startingText");
+const startBtn = document.querySelector("#startBtn");
 
-let optionsMenu = document.querySelector(".options-menu");
+const optionsMenu = document.querySelector(".options-menu");
 
-let optionRock = document.querySelector(".Option-rock");
-let optionScissors = document.querySelector(".Option-scissors");
-let optionPaper = document.querySelector(".Option-paper");
+const optionRock = document.querySelector(".Option-rock");
+const optionScissors = document.querySelector(".Option-scissors");
+const optionPaper = document.querySelector(".Option-paper");
+
+
+const scoreDiv = document.querySelector(".score");
+const personPlayer = document.createElement("div");
+const compPlayer = document.createElement("div");
+personPlayer.setAttribute('class', 'person');
+compPlayer.setAttribute('class', 'person');
+const personDisplayScore = document.createElement("div");
+const compDisplayScore = document.createElement("div");
+personDisplayScore.setAttribute('class', 'score-display');
+compDisplayScore.setAttribute('class', 'score-display');
+personDisplayScore.textContent = "0 0 0";
+compDisplayScore.textContent = "0 0 0";
+const playerTag = document.createElement("h4");
+const compTag = document.createElement("h4");
+playerTag.textContent = "Player";
+compTag.textContent = "Computer";
+
+
 
 //Adding event handler to the startBtn 
 startBtn.addEventListener('click', function(event) {
     main.removeChild(startingText);
+    personPlayer.appendChild(personDisplayScore);
+    personPlayer.appendChild(playerTag);
+    compPlayer.appendChild(compDisplayScore);
+    compPlayer.appendChild(compTag);
+    scoreDiv.appendChild(personPlayer);
+    scoreDiv.appendChild(compPlayer);
     
 });
 
@@ -52,6 +77,7 @@ function getComputerMove() {
 
 
 function playGame(playMove) {
+
         let compMove = getComputerMove();
         rounds++;
         switch(playMove) {
