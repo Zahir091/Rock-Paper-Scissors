@@ -21,36 +21,30 @@ const compTag = document.createElement("h4");
 playerTag.textContent = "Player";
 compTag.textContent = "Computer";
 
+
+
 const optionsContainer = document.querySelector(".options-Container");
+const chooseTXT = document.querySelector("#moveTxt");
 const optionsMenu = document.querySelector(".options-menu");
 
 const optionRock = document.querySelector("#rock");
-
 const rockIMG = document.createElement("img");
 rockIMG.setAttribute('src', 'Images/rock.png');
 const rockTXT = document.createElement("h4");
 rockTXT.textContent = "Rock";
-optionRock.append(rockIMG, rockTXT);
-optionPaper.append(paperIMG, paperTXT);
-optionScissors.append(scissorsIMG, scissorsTXT);
+
 
 const optionScissors = document.querySelector("#paper");
-
 const paperIMG = document.createElement("img");
 paperIMG.setAttribute('src', 'Images/paper.png');
 const paperTXT = document.createElement("h4");
 paperTXT.textContent = "Paper";
 
 const optionPaper = document.querySelector("#scissors");
-
 const scissorsIMG = document.createElement("img");
 scissorsIMG.setAttribute('src', 'Images/scissors.png');
 const scissorsTXT = document.createElement("h4");
 scissorsTXT.textContent = "Scissors";
-
-const chooseTXT = document.createElement("h3");
-chooseTXT.textContent = "Choose a move...";
-chooseTXT.setAttribute('id', 'moveTxt');
 
 
 //Adding event handler to the startBtn 
@@ -63,7 +57,15 @@ startBtn.addEventListener('click', function(event) {
     scoreDiv.appendChild(personPlayer);
     scoreDiv.appendChild(compPlayer);
     startingText.removeChild(startBtn);
+    waitForMove();
 });
+
+function waitForMove() {
+    chooseTXT.textContent = "Choose a move...";
+    optionRock.append(rockIMG, rockTXT);
+    optionPaper.append(paperIMG, paperTXT);
+    optionScissors.append(scissorsIMG, scissorsTXT);
+}
 
 //Adding event handler to the options menu
 optionsMenu.addEventListener('click', function(event) {
@@ -101,7 +103,6 @@ function getComputerMove() {
 
 
 function playGame(playMove) {
-
         let compMove = getComputerMove();
         rounds++;
         switch(playMove) {
