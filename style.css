@@ -37,7 +37,7 @@ img {
     color:white;
     padding:30px;
     width: 200px;
- 
+ border: solid pink 3px;
 }
 
 .option img {

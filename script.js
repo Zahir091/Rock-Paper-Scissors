@@ -29,22 +29,15 @@ const optionsMenu = document.querySelector(".options-menu");
 
 const optionRock = document.querySelector("#rock");
 const rockIMG = document.createElement("img");
-rockIMG.setAttribute('src', 'Images/rock.png');
 const rockTXT = document.createElement("h4");
-rockTXT.textContent = "Rock";
 
-
-const optionScissors = document.querySelector("#paper");
+const optionPaper = document.querySelector("#paper");
 const paperIMG = document.createElement("img");
-paperIMG.setAttribute('src', 'Images/paper.png');
 const paperTXT = document.createElement("h4");
-paperTXT.textContent = "Paper";
 
-const optionPaper = document.querySelector("#scissors");
+const optionScissors = document.querySelector("#scissors");
 const scissorsIMG = document.createElement("img");
-scissorsIMG.setAttribute('src', 'Images/scissors.png');
 const scissorsTXT = document.createElement("h4");
-scissorsTXT.textContent = "Scissors";
 
 
 //Adding event handler to the startBtn 
@@ -61,21 +54,30 @@ startBtn.addEventListener('click', function(event) {
 });
 
 function waitForMove() {
+    rockIMG.setAttribute('src', 'Images/rock.png');
+    rockTXT.textContent = "Rock";
+
+    paperIMG.setAttribute('src', 'Images/paper.png');
+    paperTXT.textContent = "Paper";
+
+    scissorsIMG.setAttribute('src', 'Images/scissors.png');
+    scissorsTXT.textContent = "Scissors";
+
     chooseTXT.textContent = "Choose a move...";
     optionRock.append(rockIMG, rockTXT);
     optionPaper.append(paperIMG, paperTXT);
     optionScissors.append(scissorsIMG, scissorsTXT);
+    //Adding event handler to the options menu
 }
 
-//Adding event handler to the options menu
 optionsMenu.addEventListener('click', function(event) {
-    let playerMove = event.target.id;
+    //.closest detects which div was clicked on by distance
+    let playerMove = event.target.closest('.option').id;
     if(playerMove == "rock" || playerMove == "paper" || playerMove == "scissors") {
         console.log(`Player has chosen ${playerMove}`);
         playGame(playerMove);
     }
 });
-
 
 //RANDOM NUMBER GEN
 function getRandomInt(max) {
@@ -105,6 +107,35 @@ function getComputerMove() {
 function playGame(playMove) {
         let compMove = getComputerMove();
         rounds++;
+        optionPaper.remove(paperIMG, paperTXT);
+        rockTXT.textContent = "Player";
+        scissorsTXT.textContent = "Computer";
+        switch(playMove) {
+            case "rock":
+                rockIMG.setAttribute('src', 'Images/Rock.png');
+                break;
+            case "paper":
+                rockIMG.setAttribute('src', 'Images/Paper.png');
+                break;
+            case "scissors":
+                rockIMG.setAttribute('src', 'Images/Scissors.png');
+                break;
+            default:
+                console.log("Error");
+        }
+        switch(compMove) {
+            case "rock":
+                scissorsIMG.setAttribute('src', 'Images/Rock.png');
+                break;
+            case "paper":
+                scissorsIMG.setAttribute('src', 'Images/Paper.png');
+                break;
+            case "scissors":
+                scissorsIMG.setAttribute('src', 'Images/Scissors.png');
+                break;
+            default:
+                console.log("Error");
+        }
         switch(playMove) {
             case "rock":
                 if(compMove == "rock") {
