@@ -2,6 +2,9 @@ let rounds = 0, playerPts = 0, compPts = 0;
 
 const main = document.querySelector(".main");
 
+const scoreDisplayContainer = document.querySelector(".score");
+scoreDisplayContainer.remove();
+
 const options_Container = document.querySelector(".options-Container");
 options_Container.remove();
 
@@ -9,6 +12,7 @@ options_Container.remove();
 
 //Adding event handler to the startBtn 
 startBtn.addEventListener('click', function(event) {
+    main.append(scoreDisplayContainer);
     main.append(options_Container);
     waitForMove();
     
