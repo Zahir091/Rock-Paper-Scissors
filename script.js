@@ -53,6 +53,7 @@ function getComputerMove() {
         default:
             cMove = "NONE";
     }
+    console.log(`Computer Move: ${cMove}`);
     return cMove;
 }
 
@@ -63,26 +64,26 @@ function playGame(playMove) {
         main.append(result_Container);
         switch(playMove) {
             case "rock":
-                playerIMG.setAttribute('src', 'Images/Rock.png');
+                playerIMG.setAttribute('src', './Images/rock.png');
                 break;
             case "paper":
-                playerIMG.setAttribute('src', 'Images/Paper.png');
+                playerIMG.setAttribute('src', './Images/paper.png');
                 break;
             case "scissors":
-                playerIMG.setAttribute('src', 'Images/Scissors.png');
+                playerIMG.setAttribute('src', './Images/scissors.png');
                 break;
             default:
                 console.log("Error");
         }
         switch(compMove) {
             case "rock":
-                compIMG.setAttribute('src', 'Images/Rock.png');
+                compIMG.setAttribute('src', './Images/rock.png');
                 break;
             case "paper":
-                compIMG.setAttribute('src', 'Images/Paper.png');
+                compIMG.setAttribute('src', './Images/paper.png');
                 break;
             case "scissors":
-                compIMG.setAttribute('src', 'Images/Scissors.png');
+                compIMG.setAttribute('src', './Images/scissors.png');
                 break;
             default:
                 console.log("Error");
