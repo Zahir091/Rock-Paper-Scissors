@@ -1,39 +1,20 @@
 let rounds = 0, playerPts = 0, compPts = 0;
 
 const main = document.querySelector(".main");
-
 const scoreDisplayContainer = document.querySelector(".score");
-scoreDisplayContainer.remove();
-
 const options_Container = document.querySelector(".options-Container");
+const optionsMenu = document.querySelector(".options-menu");
+scoreDisplayContainer.remove();
 options_Container.remove();
-
 
 
 //Adding event handler to the startBtn 
 startBtn.addEventListener('click', function(event) {
     main.append(scoreDisplayContainer);
     main.append(options_Container);
-    waitForMove();
-    
 });
 
-function waitForMove() {
-    rockIMG.setAttribute('src', 'Images/rock.png');
-    rockTXT.textContent = "Rock";
 
-    paperIMG.setAttribute('src', 'Images/paper.png');
-    paperTXT.textContent = "Paper";
-
-    scissorsIMG.setAttribute('src', 'Images/scissors.png');
-    scissorsTXT.textContent = "Scissors";
-
-    chooseTXT.textContent = "Choose a move...";
-    optionRock.append(rockIMG, rockTXT);
-    optionPaper.append(paperIMG, paperTXT);
-    optionScissors.append(scissorsIMG, scissorsTXT);
-    //Adding event handler to the options menu
-}
 
 optionsMenu.addEventListener('click', function(event) {
     //.closest detects which div was clicked on by distance
