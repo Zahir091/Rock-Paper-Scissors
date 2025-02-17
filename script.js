@@ -1,56 +1,17 @@
 let rounds = 0, playerPts = 0, compPts = 0;
 
 const main = document.querySelector(".main");
-const startingText = document.querySelector("#startingText");
-const startBtn = document.querySelector("#startBtn");
-const headTxt = document.querySelector("#header");
 
-const scoreDiv = document.querySelector(".score");
-const personPlayer = document.createElement("div");
-const compPlayer = document.createElement("div");
-personPlayer.setAttribute('class', 'person');
-compPlayer.setAttribute('class', 'person');
-const personDisplayScore = document.createElement("div");
-const compDisplayScore = document.createElement("div");
-personDisplayScore.setAttribute('class', 'score-display');
-compDisplayScore.setAttribute('class', 'score-display');
-personDisplayScore.textContent = "0 0 0";
-compDisplayScore.textContent = "0 0 0";
-const playerTag = document.createElement("h4");
-const compTag = document.createElement("h4");
-playerTag.textContent = "Player";
-compTag.textContent = "Computer";
+const options_Container = document.querySelector(".options-Container");
+options_Container.remove();
 
-
-
-const optionsContainer = document.querySelector(".options-Container");
-const chooseTXT = document.querySelector("#moveTxt");
-const optionsMenu = document.querySelector(".options-menu");
-
-const optionRock = document.querySelector("#rock");
-const rockIMG = document.createElement("img");
-const rockTXT = document.createElement("h4");
-
-const optionPaper = document.querySelector("#paper");
-const paperIMG = document.createElement("img");
-const paperTXT = document.createElement("h4");
-
-const optionScissors = document.querySelector("#scissors");
-const scissorsIMG = document.createElement("img");
-const scissorsTXT = document.createElement("h4");
 
 
 //Adding event handler to the startBtn 
 startBtn.addEventListener('click', function(event) {
-    headTxt.textContent = "Rock   Paper   Scissors";
-    personPlayer.appendChild(personDisplayScore);
-    personPlayer.appendChild(playerTag);
-    compPlayer.appendChild(compDisplayScore);
-    compPlayer.appendChild(compTag);
-    scoreDiv.appendChild(personPlayer);
-    scoreDiv.appendChild(compPlayer);
-    startingText.removeChild(startBtn);
+    main.append(options_Container);
     waitForMove();
+    
 });
 
 function waitForMove() {
@@ -189,5 +150,13 @@ function playGame(playMove) {
             default: 
                     console.log("error");
                 }
+                personDisplayScore.textContent = `${playerPts}`;
             }
 
+/* 
+-CREATE A SEPERATE THING FOR THE FINAL RESULT
+- Fix back the remove() and append attributes for the current options in playGame()
+- Add final functionaility for button
+- Increase score dynamically
+- Optimize code by not using switch statments for WINNING results
+*/

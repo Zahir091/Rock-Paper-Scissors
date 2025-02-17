@@ -21,7 +21,7 @@
         </div>
        <div class="score">
  <!--
-                <div class="person">
+                <div class="person" id="player-Person">
                     
                     <div class="score-display">
                         0 0 2
@@ -29,7 +29,7 @@
                     <h4>Player</h4>
                 </div>
 
-                <div class="person">
+                <div class="person" id="comp-Person">
                     
                     <div class="score-display">0 0 0</div>
                     <h4>Computer</h4>
@@ -40,37 +40,36 @@
         <div class="options-Container">
             <h3 id="moveTxt"></h3>
             <div class="options-menu">
-                
                 <div class="option" id="rock">
-                    <!--<img src="Images/rock.png">
-                    <h4>Rock</h4>-->
+                    <img id="rockIMG" src="Images/rock.png">
+                    <h4>Rock</h4>
                 </div>
                 <div class="option" id="paper">
-                    <!--<img src="Images/scissors.png">
-                    <h4>Scissors</h4>-->
+                    <img id="paperIMG" src="Images/scissors.png">
+                    <h4>Scissors</h4>
                 </div>
                 <div class="option" id="scissors">
-                   <!-- <img src="Images/paper.png">
-                    <h4>Paper</h4>-->
+                   <img id="scissorsIMG" src="Images/paper.png">
+                    <h4>Paper</h4>
                 </div>
             </div>
         </div>
 
-        <div class="options-Container">
-            <h3 id="moveTxt">Paper Beats Rock, You Lost</h3>
-            <div class="options-menu">
+        <div class="result-Container">
+            <h3 id="resultTxt">Paper Beats Rock, You Lost</h3>
+            <div class="result-menu">
                 
-                <div class="option" id="rock">
-                    <img src="Images/rock.png">
+                <div class="option" id="Result-Player">
+                    <img id="playerChoiceImg" src="Images/rock.png">
                     <h4>You</h4>
                 </div>
-                <div class="option" id="paper">
-                    <img src="Images/scissors.png">
+                <div class="option" id="Result-Comp">
+                    <img id="compChoiceImg" src="Images/scissors.png">
                     <h4>Computer</h4>
                 </div>
             </div>
         </div>
-        <button class="btnStyle" id="playAgain">Play Game</button>
+        <button class="btnStyle" id="playAgain">Play Again</button>
     </div>
     <script src="script.js"></script>
 </body>
