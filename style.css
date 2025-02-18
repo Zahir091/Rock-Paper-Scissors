@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    
 }
 html, body {
     height: 100%; /*Makes the page fit 100% of screen*/
@@ -22,6 +23,7 @@ img {
     width: 100%;
     display:flex;
     flex-direction: column;
+    justify-content: center; /* Center contents vertically */
     
 }
 .options-menu, .result-menu {
@@ -37,7 +39,7 @@ img {
     color:white;
     padding:30px;
     width: 200px;
- border: solid pink 3px;
+    border: solid pink 3px;
 }
 
 .option img {
@@ -46,8 +48,6 @@ img {
 }
 
 #startingText {
-  
-
     display: flex;
     flex-direction: column;
     justify-content: center;

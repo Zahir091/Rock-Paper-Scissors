@@ -5,20 +5,27 @@ const scoreDisplayContainer = document.querySelector(".score");
 const options_Container = document.querySelector(".options-Container");
 const optionsMenu = document.querySelector(".options-menu");
 const result_Container = document.querySelector(".result-Container");
+const startButton = document.querySelector("#startBtn");
+const headingGroup = document.querySelector("#startingText");
 
 const playerIMG = document.querySelector("#playerChoiceImg");
 const compIMG = document.querySelector("#compChoiceImg");
 
+const headText = document.querySelector("#header");
+const playAgainButton = document.querySelector("#playAgain");
 
 scoreDisplayContainer.remove();
 options_Container.remove();
 result_Container.remove();
+playAgainButton.remove();
 
 
 //Adding event handler to the startBtn 
 startBtn.addEventListener('click', function(event) {
     main.append(scoreDisplayContainer);
     main.append(options_Container);
+    headText.textContent = "Rock Paper Scissors";
+    startButton.style.display = "none";
 });
 
 
@@ -124,10 +131,3 @@ function playGame(playMove) {
         }
     }
 
-/* 
--CREATE A SEPERATE THING FOR THE FINAL RESULT
-- Fix back the remove() and append attributes for the current options in playGame()
-- Add final functionaility for button
-- Increase score dynamically
-- Optimize code by not using switch statments for WINNING results
-*/
