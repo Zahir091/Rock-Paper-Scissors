@@ -1,4 +1,4 @@
-let rounds = 0, playerPts = 0, compPts = 0;
+let rounds = 0, playerPts = 0, compPts = 0, result;
 
 const main = document.querySelector(".main");
 const scoreDisplayContainer = document.querySelector(".score");
@@ -13,6 +13,10 @@ const compIMG = document.querySelector("#compChoiceImg");
 
 const headText = document.querySelector("#header");
 const playAgainButton = document.querySelector("#playAgain");
+
+const resultText = document.querySelector("#resultTxt");
+const playerScore = document.querySelector(".score-play");
+const compScore = document.querySelector(".score-comp");
 
 scoreDisplayContainer.remove();
 options_Container.remove();
@@ -98,36 +102,54 @@ function playGame(playMove) {
         if(compMove === playMove) {
             console.log(`Round: ${rounds}, Player Move: ${playMove}, Computer Move: ${compMove}`);
             console.log("Tie!")
+            result = 'Tie';
         }
         else if(playMove === "rock") {
             if(compMove === "paper") {
                 console.log(`Round: ${rounds}, Player Move: ${playMove}, Computer Move: ${compMove}`);
                 console.log("Player Lost!")
+                result = 'Comp';
             }
             else if(compMove === "scissors") {
                 console.log(`Round: ${rounds}, Player Move: ${playMove}, Computer Move: ${compMove}`);
                 console.log("Player Won!")
+                result = 'Player';
             }
         }
         else if(playMove === "paper") {
             if(compMove === "rock") {
                 console.log(`Round: ${rounds}, Player Move: ${playMove}, Computer Move: ${compMove}`);
                 console.log("Player Won!")
+                result = 'Player';
             }
             else if(compMove === "scissors") {
                 console.log(`Round: ${rounds}, Player Move: ${playMove}, Computer Move: ${compMove}`);
                 console.log("Player Lost!")
+                result = 'Comp';
             }
         }
         else if(playMove === "scissors") {
             if(compMove === "rock") {
                 console.log(`Round: ${rounds}, Player Move: ${playMove}, Computer Move: ${compMove}`);
                 console.log("Player Lost!")
+                result = 'Comp';
             }
             else if(compMove === "paper") {
                 console.log(`Round: ${rounds}, Player Move: ${playMove}, Computer Move: ${compMove}`);
                 console.log("Player Won!")
+                result = 'Player';
             }
         }
+        if(result === 'Comp') {
+            resultText.textContent = `${compMove} beats ${playMove}. You lost!`;
+            compPts++;
+            compScore.textContent = `${compPts / 100}`
+        }
+        else if(result === 'Player') {
+            resultText.textContent = `${playMove} beats ${compMove}. You won!`;
+            playPts++;
+        }
+        else
+            resultText.textContent = `${playMove} and ${compMove}. It's a tie.`
     }
 

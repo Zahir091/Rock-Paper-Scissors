@@ -40,6 +40,7 @@ img {
     padding:30px;
     width: 200px;
     border: solid pink 3px;
+
 }
 
 .option img {
@@ -95,7 +96,7 @@ img {
     width:fit-content; /*prvents from stretching*/
     height:fit-content;
     padding: 50px;
-    
+
 }
 
 .score-display {
