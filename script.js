@@ -50,7 +50,7 @@ function getRandomInt(max) {
 
 function getComputerMove() {
     let cMove;
-    cMove = getRandomInt(2);
+    cMove = getRandomInt(3);
     switch (cMove) {
         case 0:
             cMove = "rock";
@@ -59,7 +59,7 @@ function getComputerMove() {
             cMove = "paper";
             break;
         case 2: 
-            cMove = "scissor";
+            cMove = "scissors";
             break;
         default:
             cMove = "NONE";
@@ -143,7 +143,7 @@ function playGame(playMove) {
         if(result === 'Comp') {
             resultText.textContent = `${compMove} beats ${playMove}. You lost!`;
             compPts++;
-            compScore.textContent = `${compPts / 100}`
+            compScore.textContent = `${Math.floor(compPts / 100)} ${Math.floor(compPts / 10) / 10}  ${Math.floor(compPts % 10)}`;
         }
         else if(result === 'Player') {
             resultText.textContent = `${playMove} beats ${compMove}. You won!`;
