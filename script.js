@@ -32,6 +32,13 @@ startBtn.addEventListener('click', function(event) {
     startButton.style.display = "none";
 });
 
+playAgainButton.addEventListener('click', function(event) {
+    main.append(options_Container);
+    result_Container.remove();
+    playAgainButton.remove();
+});
+
+
 
 optionsMenu.addEventListener('click', function(event) {
     //.closest detects which div was clicked on by distance
@@ -39,6 +46,8 @@ optionsMenu.addEventListener('click', function(event) {
     if(playerMove == "rock" || playerMove == "paper" || playerMove == "scissors") {
         console.log(`Player has chosen ${playerMove}`);
         options_Container.remove();
+        main.append(result_Container);
+        main.append(playAgainButton);
         playGame(playerMove);
     }
 });
@@ -72,7 +81,6 @@ function getComputerMove() {
 function playGame(playMove) {
         let compMove = getComputerMove();
         rounds++;
-        main.append(result_Container);
         switch(playMove) {
             case "rock":
                 playerIMG.setAttribute('src', './Images/rock.png');
@@ -147,9 +155,11 @@ function playGame(playMove) {
         }
         else if(result === 'Player') {
             resultText.textContent = `${playMove} beats ${compMove}. You won!`;
-            playPts++;
+            playerPts++;
+            playerScore.textContent = `${Math.floor(playerPts / 100)} ${Math.floor(playerPts / 10) / 10}  ${Math.floor(playerPts % 10)}`;
         }
         else
-            resultText.textContent = `${playMove} and ${compMove}. It's a tie.`
-    }
+            resultText.textContent = `${playMove} and ${compMove}. It's a tie.`;
+     }
+
 
